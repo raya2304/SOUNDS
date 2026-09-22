@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sounds of the World | Musical Instruments Explorer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: "#201713",
+                        espresso: "#30221b",
+                        cocoa: "#513426",
+                        bronze: "#98683f",
+                        gold: "#c99a62",
+                        cream: "#f6efe4",
+                        sand: "#e6d4b8",
+                        muted: "#806b58"
+                    },
+
+                    fontFamily: {
+                        display: ["Georgia", "serif"],
+                        body: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+        }
+
+        .serif {
+            font-family: "DM Serif Display", Georgia, serif;
+        }
+
+        .hero-bg {
+            background:
+                linear-gradient(rgba(20, 14, 10, .76), rgba(20, 14, 10, .82)),
+                url("https://images.unsplash.com/photo-1524650359799-842906ca1c06?auto=format&fit=crop&w=2000&q=90");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .noise {
+            background-image:
+                radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);
+            background-size: 5px 5px;
+        }
+
+        .modal-bg {
+            background: rgba(0, 0, 0, .78);
+        }
+    </style>
+</head>
+
+<body class="bg-cream text-ink">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="sticky top-0 z-50 bg-ink/95 backdrop-blur border-b border-white/10">
+
+        <div class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between">
+
+            <a href="#home" class="text-2xl tracking-[5px] font-bold text-cream">
+                SOUNDS<span class="text-gold">.</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 text-sm text-sand">
+
+                <a href="#home" class="hover:text-gold transition">
+                    Home
+                </a>
+
+                <a href="#explore" class="hover:text-gold transition">
+                    Explore
+                </a>
+
+                <a href="#world" class="hover:text-gold transition">
+                    World
+                </a>
+
+                <a href="#timeline" class="hover:text-gold transition">
+                    Timeline
+                </a>
+
+                <a href="#gallery" class="hover:text-gold transition">
+                    Gallery
+                </a>
+
+            </nav>
+
+            <button
+                onclick="randomInstrument()"
+                class="border border-gold text-gold hover:bg-gold hover:text-ink px-5 py-2.5 rounded-full text-sm transition">
+                Random
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero-bg min-h-[88vh] text-cream flex items-center relative overflow-hidden">
+
+        <div class="absolute inset-0 noise opacity-30"></div>
+
+        <div class="max-w-7xl mx-auto px-5 md:px-8 py-24 w-full relative">
+
+            <div class="max-w-4xl">
+
+                <p class="text-gold tracking-[5px] text-xs font-bold mb-6">
+                    MUSIC • CULTURE • CRAFT
+                </p>
+
+                <h1 class="serif text-6xl md:text-8xl lg:text-[110px] leading-[.9] mb-8">
+                    Sounds of
+                    <span class="text-gold block">
+                        the World
+                    </span>
+                </h1>
+
+                <p class="text-sand max-w-2xl text-base md:text-lg leading-8">
+                    Discover the instruments that have shaped cultures,
+                    traditions and musical stories across generations.
+                    Explore their origins, materials, sounds and stories.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-9">
+
+                    <a href="#explore"
+                        class="bg-gold text-ink font-bold px-7 py-3.5 rounded-full hover:bg-sand transition">
+                        Explore Instruments
+                    </a>
+
+                    <button onclick="randomInstrument()"
+                        class="border border-gold text-cream px-7 py-3.5 rounded-full hover:bg-gold hover:text-ink transition">
+                        Discover Something
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mt-24 pt-7 border-t border-white/20">
+
+                <div>
+                    <strong class="text-3xl text-gold">20+</strong>
+                    <p class="text-xs text-sand mt-2">Instruments</p>
+                </div>
+
+                <div>
+                    <strong class="text-3xl text-gold">6</strong>
+                    <p class="text-xs text-sand mt-2">Categories</p>
+                </div>
+
+                <div>
+                    <strong class="text-3xl text-gold">6</strong>
+                    <p class="text-xs text-sand mt-2">Regions</p>
+                </div>
+
+                <div>
+                    <strong class="text-3xl text-gold">1000+</strong>
+                    <p class="text-xs text-sand mt-2">Years of Tradition</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="max-w-7xl mx-auto px-5 md:px-8 py-24 md:py-32">
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <div class="overflow-hidden">
+
+                <img
+                    src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=90"
+                    class="w-full h-[450px] md:h-[600px] object-cover hover:scale-105 transition duration-700"
+                    alt="Musical performance">
+
+            </div>
+
+            <div>
+
+                <p class="text-bronze tracking-[4px] text-xs font-bold mb-5">
+                    THE LANGUAGE OF MUSIC
+                </p>
+
+                <h2 class="serif text-5xl md:text-6xl leading-tight mb-7">
+                    Every culture has
+                    <span class="text-bronze">its own sound.</span>
+                </h2>
+
+                <p class="text-muted leading-8 mb-5">
+                    Music is one of humanity's oldest forms of expression.
+                    Across continents, communities have created instruments
+                    from the materials available around them.
+                </p>
+
+                <p class="text-muted leading-8">
+                    From the delicate strings of the Japanese koto to the
+                    powerful rhythms of the West African djembe, instruments
+                    carry stories of people, places and traditions.
+                </p>
+
+                <div class="grid grid-cols-2 gap-5 mt-9">
+
+                    <div class="border-l-4 border-gold pl-5">
+                        <p class="text-3xl serif">01</p>
+                        <p class="text-sm text-muted mt-1">
+                            Culture
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-gold pl-5">
+                        <p class="text-3xl serif">02</p>
+                        <p class="text-sm text-muted mt-1">
+                            Craftsmanship
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="bg-sand/40 py-24">
+
+        <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+            <div class="flex flex-col md:flex-row justify-between md:items-end gap-5 mb-12">
+
+                <div>
+
+                    <p class="text-bronze tracking-[4px] text-xs font-bold mb-4">
+                        EXPLORE
+                    </p>
+
+                    <h2 class="serif text-5xl md:text-6xl">
+                        Find Your Sound
+                    </h2>
+
+                </div>
+
+                <p class="text-muted max-w-md leading-7">
+                    Discover instruments according to the way they
+                    produce their unique sound.
+                </p>
+
+            </div>
+
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <!-- STRING -->
+
+                <button onclick="setCategory('Strings')"
+                    class="group relative h-80 overflow-hidden text-left">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=900&q=85"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-0 p-7 text-white">
+
+                        <h3 class="serif text-4xl">
+                            Strings
+                        </h3>
+
+                        <p class="text-sm text-sand mt-2">
+                            Violin • Sitar • Oud • Koto
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- PERCUSSION -->
+
+                <button onclick="setCategory('Percussion')"
+                    class="group relative h-80 overflow-hidden text-left">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=900&q=85"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-0 p-7 text-white">
+
+                        <h3 class="serif text-4xl">
+                            Percussion
+                        </h3>
+
+                        <p class="text-sm text-sand mt-2">
+                            Tabla • Djembe • Taiko • Cajón
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- WIND -->
+
+                <button onclick="setCategory('Wind')"
+                    class="group relative h-80 overflow-hidden text-left">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=900&q=85"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-0 p-7 text-white">
+
+                        <h3 class="serif text-4xl">
+                            Wind
+                        </h3>
+
+                        <p class="text-sm text-sand mt-2">
+                            Flute • Ney • Shakuhachi
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- BRASS -->
+
+                <button onclick="setCategory('Brass')"
+                    class="group relative h-80 overflow-hidden text-left">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=85"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-0 p-7 text-white">
+
+                        <h3 class="serif text-4xl">
+                            Brass
+                        </h3>
+
+                        <p class="text-sm text-sand mt-2">
+                            Trumpet • Trombone • Tuba
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- KEYBOARD -->
+
+                <button onclick="setCategory('Keyboard')"
+                    class="group relative h-80 overflow-hidden text-left">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=900&q=85"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-0 p-7 text-white">
+
+                        <h3 class="serif text-4xl">
+                            Keyboard
+                        </h3>
+
+                        <p class="text-sm text-sand mt-2">
+                            Piano • Organ • Accordion
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- ELECTRONIC -->
+
+                <button onclick="setCategory('Electronic')"
+                    class="group relative h-80 overflow-hidden text-left">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?auto=format&fit=crop&w=900&q=85"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-0 p-7 text-white">
+
+                        <h3 class="serif text-4xl">
+                            Electronic
+                        </h3>
+
+                        <p class="text-sm text-sand mt-2">
+                            Synthesizer • Theremin • Sampler
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EXPLORE ================= -->
+
+    <section id="explore" class="bg-ink text-cream py-24">
+
+        <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+            <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-7 mb-12">
+
+                <div>
+
+                    <p class="text-gold tracking-[4px] text-xs font-bold mb-4">
+                        INSTRUMENT LIBRARY
+                    </p>
+
+                    <h2 class="serif text-5xl md:text-6xl">
+                        Explore the Collection
+                    </h2>
+
+                </div>
+
+                <p class="text-sand max-w-md leading-7">
+                    Search by instrument name, country, category or
+                    region and discover something new.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="max-w-2xl bg-espresso border border-cocoa flex items-center px-5 py-4 mb-7">
+
+                <span class="text-gold text-2xl mr-3">
+                    ⌕
+                </span>
+
+                <input
+                    id="searchInput"
+                    oninput="searchInstruments()"
+                    type="text"
+                    placeholder="Search instruments, countries or categories..."
+                    class="w-full bg-transparent outline-none text-cream placeholder:text-muted">
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="flex flex-wrap gap-2 mb-4">
+
+                <button onclick="setCategory('All')"
+                    class="filter-button active px-4 py-2 border border-cocoa rounded-full text-sm">
+                    All
+                </button>
+
+                <button onclick="setCategory('Strings')"
+                    class="filter-button px-4 py-2 border border-cocoa rounded-full text-sm">
+                    Strings
+                </button>
+
+                <button onclick="setCategory('Percussion')"
+                    class="filter-button px-4 py-2 border border-cocoa rounded-full text-sm">
+                    Percussion
+                </button>
+
+                <button onclick="setCategory('Wind')"
+                    class="filter-button px-4 py-2 border border-cocoa rounded-full text-sm">
+                    Wind
+                </button>
+
+                <button onclick="setCategory('Brass')"
+                    class="filter-button px-4 py-2 border border-cocoa rounded-full text-sm">
+                    Brass
+                </button>
+
+                <button onclick="setCategory('Keyboard')"
+                    class="filter-button px-4 py-2 border border-cocoa rounded-full text-sm">
+                    Keyboard
+                </button>
+
+                <button onclick="setCategory('Electronic')"
+                    class="filter-button px-4 py-2 border border-cocoa rounded-full text-sm">
+                    Electronic
+                </button>
+
+            </div>
+
+
+            <!-- REGION -->
+
+            <div class="flex flex-wrap gap-2">
+
+                <button onclick="setRegion('All')" class="region-button px-4 py-2 border border-cocoa rounded-full text-xs">
+                    All Regions
+                </button>
+
+                <button onclick="setRegion('Asia')" class="region-button px-4 py-2 border border-cocoa rounded-full text-xs">
+                    Asia
+                </button>
+
+                <button onclick="setRegion('Africa')" class="region-button px-4 py-2 border border-cocoa rounded-full text-xs">
+                    Africa
+                </button>
+
+                <button onclick="setRegion('Europe')" class="region-button px-4 py-2 border border-cocoa rounded-full text-xs">
+                    Europe
+                </button>
+
+                <button onclick="setRegion('Middle East')" class="region-button px-4 py-2 border border-cocoa rounded-full text-xs">
+                    Middle East
+                </button>
+
+                <button onclick="setRegion('Americas')" class="region-button px-4 py-2 border border-cocoa rounded-full text-xs">
+                    Americas
+                </button>
+
+                <button onclick="setRegion('Oceania')" class="region-button px-4 py-2 border border-cocoa rounded-full text-xs">
+                    Oceania
+                </button>
+
+            </div>
+
+
+            <!-- CARDS -->
+
+            <div id="instrumentGrid"
+                class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-12">
+            </div>
+
+
+            <p id="noResults"
+                class="hidden text-center text-sand py-16">
+                No instruments found.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RANDOM DISCOVERY ================= -->
+
+    <section class="bg-gold">
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2">
+
+            <div class="h-[500px]">
+
+                <img
+                    id="randomImage"
+                    src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1200&q=90"
+                    class="w-full h-full object-cover"
+                    alt="Random instrument">
+
+            </div>
+
+
+            <div class="p-10 md:p-16 flex flex-col justify-center">
+
+                <p class="text-espresso/70 tracking-[4px] text-xs font-bold mb-5">
+                    DISCOVER SOMETHING NEW
+                </p>
+
+                <h2
+                    id="randomName"
+                    class="serif text-5xl md:text-7xl leading-none mb-6">
+                    Let Music Surprise You
+                </h2>
+
+                <p
+                    id="randomDescription"
+                    class="text-espresso/80 leading-8 max-w-xl">
+                    Discover a random instrument and learn about
+                    its history and musical tradition.
+                </p>
+
+
+                <div class="flex gap-12 mt-8 mb-8">
+
+                    <div>
+                        <p class="uppercase text-xs text-espresso/60">
+                            Country
+                        </p>
+
+                        <strong id="randomCountry">
+                            —
+                        </strong>
+                    </div>
+
+                    <div>
+                        <p class="uppercase text-xs text-espresso/60">
+                            Category
+                        </p>
+
+                        <strong id="randomCategory">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <button
+                    onclick="randomInstrument()"
+                    class="bg-ink text-cream px-7 py-3.5 rounded-full w-fit hover:bg-cocoa transition">
+                    Discover Another
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WORLD ================= -->
+
+    <section id="world" class="py-24 max-w-7xl mx-auto px-5 md:px-8">
+
+        <div class="mb-12">
+
+            <p class="text-bronze tracking-[4px] text-xs font-bold mb-4">
+                GLOBAL SOUNDS
+            </p>
+
+            <h2 class="serif text-5xl md:text-6xl">
+                Music Across Continents
+            </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <div class="bg-sand p-8 border-l-4 border-bronze">
+
+                <span class="text-bronze text-xs font-bold">
+                    01
+                </span>
+
+                <h3 class="serif text-4xl mt-6">
+                    Asia
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                    Sitar • Tabla • Koto • Erhu • Shakuhachi
+                </p>
+
+            </div>
+
+
+            <div class="bg-sand p-8 border-l-4 border-bronze">
+
+                <span class="text-bronze text-xs font-bold">
+                    02
+                </span>
+
+                <h3 class="serif text-4xl mt-6">
+                    Africa
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                    Djembe • Kora • Mbira • Balafon
+                </p>
+
+            </div>
+
+
+            <div class="bg-sand p-8 border-l-4 border-bronze">
+
+                <span class="text-bronze text-xs font-bold">
+                    03
+                </span>
+
+                <h3 class="serif text-4xl mt-6">
+                    Europe
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                    Violin • Harp • Accordion • Bagpipes
+                </p>
+
+            </div>
+
+
+            <div class="bg-sand p-8 border-l-4 border-bronze">
+
+                <span class="text-bronze text-xs font-bold">
+                    04
+                </span>
+
+                <h3 class="serif text-4xl mt-6">
+                    Americas
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                    Guitar • Cajón • Marimba • Banjo
+                </p>
+
+            </div>
+
+
+            <div class="bg-sand p-8 border-l-4 border-bronze">
+
+                <span class="text-bronze text-xs font-bold">
+                    05
+                </span>
+
+                <h3 class="serif text-4xl mt-6">
+                    Middle East
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                    Oud • Ney • Darbuka • Santur
+                </p>
+
+            </div>
+
+
+            <div class="bg-sand p-8 border-l-4 border-bronze">
+
+                <span class="text-bronze text-xs font-bold">
+                    06
+                </span>
+
+                <h3 class="serif text-4xl mt-6">
+                    Oceania
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                    Didgeridoo • Pūtātara • Traditional drums
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURED ================= -->
+
+    <section class="bg-sand py-24">
+
+        <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+                <div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1200&q=90"
+                        class="w-full h-[550px] object-cover"
+                        alt="String instrument">
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-bronze tracking-[4px] text-xs font-bold mb-5">
+                        FEATURED INSTRUMENT
+                    </p>
+
+                    <h2 class="serif text-6xl md:text-8xl mb-6">
+                        The Sitar
+                    </h2>
+
+                    <p class="text-muted leading-8">
+                        The sitar is one of the best-known instruments
+                        associated with Hindustani classical music.
+                        Its distinctive sound comes from a combination
+                        of playing strings and sympathetic strings.
+                    </p>
+
+
+                    <div class="grid grid-cols-3 border-y border-bronze/30 mt-8">
+
+                        <div class="py-5">
+                            <p class="text-xs text-muted uppercase">
+                                Origin
+                            </p>
+                            <strong>India</strong>
+                        </div>
+
+                        <div class="py-5">
+                            <p class="text-xs text-muted uppercase">
+                                Family
+                            </p>
+                            <strong>Strings</strong>
+                        </div>
+
+                        <div class="py-5">
+                            <p class="text-xs text-muted uppercase">
+                                Method
+                            </p>
+                            <strong>Plucked</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SOUND SCIENCE ================= -->
+
+    <section class="max-w-7xl mx-auto px-5 md:px-8 py-24">
+
+        <div class="mb-12">
+
+            <p class="text-bronze tracking-[4px] text-xs font-bold mb-4">
+                THE SCIENCE OF SOUND
+            </p>
+
+            <h2 class="serif text-5xl md:text-6xl">
+                How Instruments Create Music
+            </h2>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            <div class="bg-espresso text-cream p-8 min-h-72">
+
+                <span class="text-gold">
+                    01
+                </span>
+
+                <h3 class="serif text-3xl mt-10 mb-4">
+                    Strings
+                </h3>
+
+                <p class="text-sand text-sm leading-7">
+                    Vibrating strings produce sound. Their pitch changes
+                    according to their length, tension and thickness.
+                </p>
+
+            </div>
+
+
+            <div class="bg-espresso text-cream p-8 min-h-72">
+
+                <span class="text-gold">
+                    02
+                </span>
+
+                <h3 class="serif text-3xl mt-10 mb-4">
+                    Air
+                </h3>
+
+                <p class="text-sand text-sm leading-7">
+                    Wind instruments create sound by making a column
+                    of air vibrate inside the instrument.
+                </p>
+
+            </div>
+
+
+            <div class="bg-espresso text-cream p-8 min-h-72">
+
+                <span class="text-gold">
+                    03
+                </span>
+
+                <h3 class="serif text-3xl mt-10 mb-4">
+                    Percussion
+                </h3>
+
+                <p class="text-sand text-sm leading-7">
+                    Drums create sound when surfaces are struck,
+                    shaken, scraped or otherwise set into motion.
+                </p>
+
+            </div>
+
+
+            <div class="bg-espresso text-cream p-8 min-h-72">
+
+                <span class="text-gold">
+                    04
+                </span>
+
+                <h3 class="serif text-3xl mt-10 mb-4">
+                    Electronics
+                </h3>
+
+                <p class="text-sand text-sm leading-7">
+                    Electronic instruments generate and manipulate
+                    sound using electrical and digital technology.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TIMELINE ================= -->
+
+    <section id="timeline" class="bg-ink text-cream py-24">
+
+        <div class="max-w-5xl mx-auto px-5 md:px-8">
+
+            <div class="mb-16">
+
+                <p class="text-gold tracking-[4px] text-xs font-bold mb-4">
+                    A MUSICAL JOURNEY
+                </p>
+
+                <h2 class="serif text-5xl md:text-6xl">
+                    From Ancient to Digital
+                </h2>
+
+            </div>
+
+
+            <div class="border-l border-cocoa pl-8 md:pl-12 space-y-14">
+
+                <div class="relative">
+
+                    <span class="absolute -left-[38px] md:-left-[53px] top-1 w-3 h-3 bg-gold rounded-full"></span>
+
+                    <p class="text-gold text-xs tracking-[3px] font-bold">
+                        ANCIENT
+                    </p>
+
+                    <h3 class="serif text-3xl mt-3">
+                        The First Sounds
+                    </h3>
+
+                    <p class="text-sand leading-7 mt-3 max-w-2xl">
+                        Early humans created music using bones, wood,
+                        stones, animal skins and simple strings.
+                    </p>
+
+                </div>
+
+
+                <div class="relative">
+
+                    <span class="absolute -left-[38px] md:-left-[53px] top-1 w-3 h-3 bg-gold rounded-full"></span>
+
+                    <p class="text-gold text-xs tracking-[3px] font-bold">
+                        MEDIEVAL
+                    </p>
+
+                    <h3 class="serif text-3xl mt-3">
+                        Strings & Early Keyboards
+                    </h3>
+
+                    <p class="text-sand leading-7 mt-3 max-w-2xl">
+                        Lutes, harps and early keyboard instruments
+                        developed across different musical traditions.
+                    </p>
+
+                </div>
+
+
+                <div class="relative">
+
+                    <span class="absolute -left-[38px] md:-left-[53px] top-1 w-3 h-3 bg-gold rounded-full"></span>
+
+                    <p class="text-gold text-xs tracking-[3px] font-bold">
+                        CLASSICAL
+                    </p>
+
+                    <h3 class="serif text-3xl mt-3">
+                        The Orchestra
+                    </h3>
+
+                    <p class="text-sand leading-7 mt-3 max-w-2xl">
+                        Violins, pianos, brass and woodwind instruments
+                        became central to Western classical music.
+                    </p>
+
+                </div>
+
+
+                <div class="relative">
+
+                    <span class="absolute -left-[38px] md:-left-[53px] top-1 w-3 h-3 bg-gold rounded-full"></span>
+
+                    <p class="text-gold text-xs tracking-[3px] font-bold">
+                        MODERN
+                    </p>
+
+                    <h3 class="serif text-3xl mt-3">
+                        Electricity Changes Music
+                    </h3>
+
+                    <p class="text-sand leading-7 mt-3 max-w-2xl">
+                        Electric guitars, synthesizers and electronic
+                        instruments transformed popular music.
+                    </p>
+
+                </div>
+
+
+                <div class="relative">
+
+                    <span class="absolute -left-[38px] md:-left-[53px] top-1 w-3 h-3 bg-gold rounded-full"></span>
+
+                    <p class="text-gold text-xs tracking-[3px] font-bold">
+                        DIGITAL
+                    </p>
+
+                    <h3 class="serif text-3xl mt-3">
+                        Music Without Borders
+                    </h3>
+
+                    <p class="text-sand leading-7 mt-3 max-w-2xl">
+                        MIDI controllers, digital instruments and music
+                        software have expanded the possibilities of sound.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery" class="max-w-7xl mx-auto px-5 md:px-8 py-24">
+
+        <div class="mb-12">
+
+            <p class="text-bronze tracking-[4px] text-xs font-bold mb-4">
+                VISUAL COLLECTION
+            </p>
+
+            <h2 class="serif text-5xl md:text-6xl">
+                Instruments in Focus
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+            <img
+                src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Guitar">
+
+            <img
+                src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Piano">
+
+            <img
+                src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Drums">
+
+            <img
+                src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Wind instrument">
+
+            <img
+                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Musician">
+
+            <img
+                src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Orchestra">
+
+            <img
+                src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Drums">
+
+            <img
+                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=85"
+                class="w-full h-64 object-cover hover:scale-[1.02] transition"
+                alt="Brass instrument">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FACT ================= -->
+
+    <section class="bg-cocoa text-cream py-24">
+
+        <div class="max-w-4xl mx-auto px-5 text-center">
+
+            <p class="text-gold tracking-[4px] text-xs font-bold mb-6">
+                DID YOU KNOW?
+            </p>
+
+            <h2 id="factText"
+                class="serif text-4xl md:text-6xl leading-tight mb-10">
+                The oud is a fretless string instrument with a rounded body.
+            </h2>
+
+            <button
+                onclick="nextFact()"
+                class="border border-gold text-gold px-7 py-3 rounded-full hover:bg-gold hover:text-ink transition">
+                Next Fact
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FAVORITES ================= -->
+
+    <section class="max-w-7xl mx-auto px-5 md:px-8 py-24">
+
+        <div class="flex justify-between items-end gap-5 mb-10">
+
+            <div>
+
+                <p class="text-bronze tracking-[4px] text-xs font-bold mb-4">
+                    YOUR COLLECTION
+                </p>
+
+                <h2 class="serif text-5xl md:text-6xl">
+                    Favorite Instruments
+                </h2>
+
+            </div>
+
+            <button
+                onclick="clearFavorites()"
+                class="text-sm text-bronze hover:text-ink">
+                Clear All
+            </button>
+
+        </div>
+
+
+        <div id="favoriteGrid"
+            class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        </div>
+
+
+        <p id="emptyFavorites"
+            class="text-center text-muted py-10">
+            Click the heart on an instrument to add it to your collection.
+        </p>
+
+    </section>
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div id="modal"
+        class="hidden fixed inset-0 z-[100] modal-bg items-center justify-center p-5">
+
+        <div class="bg-cream max-w-4xl w-full max-h-[90vh] overflow-y-auto relative grid md:grid-cols-2">
+
+            <button
+                onclick="closeModal()"
+                class="absolute right-4 top-4 z-10 w-10 h-10 rounded-full bg-ink text-white text-xl">
+                ×
+            </button>
+
+
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+                class="w-full h-full min-h-[350px] object-cover">
+
+
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+
+                <p id="modalCategory"
+                    class="text-bronze tracking-[4px] text-xs font-bold mb-4">
+                </p>
+
+                <h2
+                    id="modalName"
+                    class="serif text-5xl mb-5">
+                </h2>
+
+                <p
+                    id="modalDescription"
+                    class="text-muted leading-8">
+                </p>
+
+
+                <div class="grid grid-cols-2 gap-4 mt-8">
+
+                    <div class="border-t border-sand pt-3">
+
+                        <p class="text-xs uppercase text-muted">
+                            Country
+                        </p>
+
+                        <strong id="modalCountry"></strong>
+
+                    </div>
+
+
+                    <div class="border-t border-sand pt-3">
+
+                        <p class="text-xs uppercase text-muted">
+                            Region
+                        </p>
+
+                        <strong id="modalRegion"></strong>
+
+                    </div>
+
+
+                    <div class="border-t border-sand pt-3">
+
+                        <p class="text-xs uppercase text-muted">
+                            Material
+                        </p>
+
+                        <strong id="modalMaterial"></strong>
+
+                    </div>
+
+
+                    <div class="border-t border-sand pt-3">
+
+                        <p class="text-xs uppercase text-muted">
+                            Method
+                        </p>
+
+                        <strong id="modalMethod"></strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="modalFavorite"
+                    onclick="toggleCurrentFavorite()"
+                    class="border border-bronze text-bronze px-5 py-3 mt-8 hover:bg-bronze hover:text-white transition">
+                    ♡ Add to Collection
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="bg-ink text-sand py-16">
+
+        <div class="max-w-7xl mx-auto px-5 md:px-8 text-center">
+
+            <div class="text-3xl tracking-[5px] font-bold text-cream">
+                SOUNDS<span class="text-gold">.</span>
+            </div>
+
+            <p class="max-w-xl mx-auto mt-5 text-sm leading-7 text-muted">
+                An interactive exploration of musical instruments,
+                cultural traditions and the art of sound.
+            </p>
+
+            <div class="h-px bg-cocoa my-8"></div>
+
+            <p class="text-xs text-muted">
+                © 2026 Sounds of the World • Built with HTML, Tailwind CSS & JavaScript
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* =========================================
+           INSTRUMENT DATA
+        ========================================= */
+
+        const instruments = [
+
+            {
+                id: 1,
+                name: "Sitar",
+                category: "Strings",
+                region: "Asia",
+                country: "India",
+                material: "Wood",
+                method: "Plucked",
+                image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=900&q=85",
+                description: "The sitar is a plucked string instrument associated with Hindustani classical music. Its resonant sound comes from playing strings and sympathetic strings."
+            },
+
+            {
+                id: 2,
+                name: "Tabla",
+                category: "Percussion",
+                region: "Asia",
+                country: "India",
+                material: "Wood and metal",
+                method: "Struck",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=900&q=85",
+                description: "The tabla is a pair of hand-played drums widely used in Indian classical music and many other musical traditions."
+            },
+
+            {
+                id: 3,
+                name: "Koto",
+                category: "Strings",
+                region: "Asia",
+                country: "Japan",
+                material: "Wood",
+                method: "Plucked",
+                image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=85",
+                description: "The koto is a traditional Japanese zither with movable bridges and multiple strings."
+            },
+
+            {
+                id: 4,
+                name: "Shakuhachi",
+                category: "Wind",
+                region: "Asia",
+                country: "Japan",
+                material: "Bamboo",
+                method: "Blown",
+                image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=900&q=85",
+                description: "The shakuhachi is an end-blown bamboo flute known for its expressive and breath-oriented sound."
+            },
+
+            {
+                id: 5,
+                name: "Taiko",
+                category: "Percussion",
+                region: "Asia",
+                country: "Japan",
+                material: "Wood and leather",
+                method: "Struck",
+                image: "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=85",
+                description: "Taiko refers to a family of Japanese drums used in ceremonies, festivals and musical performances."
+            },
+
+            {
+                id: 6,
+                name: "Oud",
+                category: "Strings",
+                region: "Middle East",
+                country: "Middle East",
+                material: "Wood",
+                method: "Plucked",
+                image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=85",
+                description: "The oud is a short-necked, fretless string instrument with a distinctive rounded body."
+            },
+
+            {
+                id: 7,
+                name: "Ney",
+                category: "Wind",
+                region: "Middle East",
+                country: "Middle East",
+                material: "Reed",
+                method: "Blown",
+                image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=900&q=85",
+                description: "The ney is an ancient end-blown flute used throughout many Middle Eastern musical traditions."
+            },
+
+            {
+                id: 8,
+                name: "Darbuka",
+                category: "Percussion",
+                region: "Middle East",
+                country: "Egypt",
+                material: "Metal and ceramic",
+                method: "Struck",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=900&q=85",
+                description: "The darbuka is a goblet-shaped drum widely used across Middle Eastern and North African music."
+            },
+
+            {
+                id: 9,
+                name: "Djembe",
+                category: "Percussion",
+                region: "Africa",
+                country: "West Africa",
+                material: "Wood and skin",
+                method: "Struck",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=900&q=85",
+                description: "The djembe is a goblet-shaped hand drum associated with musical traditions of West Africa."
+            },
+
+            {
+                id: 10,
+                name: "Kora",
+                category: "Strings",
+                region: "Africa",
+                country: "West Africa",
+                material: "Wood and calabash",
+                method: "Plucked",
+                image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=85",
+                description: "The kora is a West African harp-lute traditionally constructed using a large calabash resonator."
+            },
+
+            {
+                id: 11,
+                name: "Violin",
+                category: "Strings",
+                region: "Europe",
+                country: "Italy",
+                material: "Wood",
+                method: "Bowed",
+                image: "https://images.unsplash.com/photo-1460039230329-eb070fc6c77c?auto=format&fit=crop&w=900&q=85",
+                description: "The violin is a bowed string instrument that became a central part of Western classical music."
+            },
+
+            {
+                id: 12,
+                name: "Classical Guitar",
+                category: "Strings",
+                region: "Europe",
+                country: "Spain",
+                material: "Wood",
+                method: "Plucked",
+                image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=900&q=85",
+                description: "The classical guitar is a six-string instrument traditionally played with the fingers."
+            },
+
+            {
+                id: 13,
+                name: "Accordion",
+                category: "Keyboard",
+                region: "Europe",
+                country: "Europe",
+                material: "Wood and metal",
+                method: "Keys and bellows",
+                image: "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=85",
+                description: "The accordion uses bellows to push air through reeds while keys or buttons control the notes."
+            },
+
+            {
+                id: 14,
+                name: "Didgeridoo",
+                category: "Wind",
+                region: "Oceania",
+                country: "Australia",
+                material: "Wood",
+                method: "Blown",
+                image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=900&q=85",
+                description: "The didgeridoo is a traditional wind instrument associated with Aboriginal Australian cultures."
+            },
+
+            {
+                id: 15,
+                name: "Cajón",
+                category: "Percussion",
+                region: "Americas",
+                country: "Peru",
+                material: "Wood",
+                method: "Struck",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=900&q=85",
+                description: "The cajón is a box-shaped percussion instrument originating in Peru."
+            },
+
+            {
+                id: 16,
+                name: "Trumpet",
+                category: "Brass",
+                region: "Europe",
+                country: "Europe",
+                material: "Brass",
+                method: "Blown",
+                image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=85",
+                description: "The trumpet is a brass instrument known for its bright sound and role in classical, jazz and popular music."
+            },
+
+            {
+                id: 17,
+                name: "Piano",
+                category: "Keyboard",
+                region: "Europe",
+                country: "Italy",
+                material: "Wood and metal",
+                method: "Hammer mechanism",
+                image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=900&q=85",
+                description: "The piano produces sound when felt-covered hammers strike strings after keys are pressed."
+            },
+
+            {
+                id: 18,
+                name: "Synthesizer",
+                category: "Electronic",
+                region: "Europe",
+                country: "International",
+                material: "Electronic components",
+                method: "Electronic",
+                image: "https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?auto=format&fit=crop&w=900&q=85",
+                description: "Synthesizers generate and manipulate electronic signals to create a wide range of sounds."
+            },
+
+            {
+                id: 19,
+                name: "Marimba",
+                category: "Percussion",
+                region: "Americas",
+                country: "Guatemala",
+                material: "Wood",
+                method: "Struck",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=900&q=85",
+                description: "The marimba is a tuned percussion instrument with wooden bars and resonators."
+            },
+
+            {
+                id: 20,
+                name: "Banjo",
+                category: "Strings",
+                region: "Americas",
+                country: "United States",
+                material: "Wood and metal",
+                method: "Plucked",
+                image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=900&q=85",
+                description: "The banjo is a string instrument with a distinctive circular body and an important history in American music."
+            }
+
+        ];
+
+
+        /* =========================================
+           VARIABLES
+        ========================================= */
+
+        let currentCategory = "All";
+
+        let currentRegion = "All";
+
+        let currentInstrument = null;
+
+        let favorites =
+            JSON.parse(localStorage.getItem("musicFavorites")) || [];
+
+
+        /* =========================================
+           DISPLAY INSTRUMENTS
+        ========================================= */
+
+        function displayInstruments(data) {
+
+            const grid =
+                document.getElementById("instrumentGrid");
+
+            const noResults =
+                document.getElementById("noResults");
+
+            grid.innerHTML = "";
+
+
+            if (data.length === 0) {
+
+                noResults.classList.remove("hidden");
+
+                return;
+
+            }
+
+
+            noResults.classList.add("hidden");
+
+
+            data.forEach(instrument => {
+
+                const isFavorite =
+                    favorites.includes(instrument.id);
+
+
+                const card =
+                    document.createElement("article");
+
+
+                card.className =
+                    "bg-espresso overflow-hidden group";
+
+
+                card.innerHTML = `
+
+                    <div class="relative h-64 overflow-hidden">
+
+                        <img
+                            src="${instrument.image}"
+                            alt="${instrument.name}"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                        >
+
+                        <span
+                            class="absolute top-4 left-4 bg-gold text-ink text-[10px] font-bold px-3 py-1.5">
+                            ${instrument.category}
+                        </span>
+
+                        <button
+                            onclick="toggleFavorite(${instrument.id})"
+                            class="absolute top-4 right-4 w-9 h-9 rounded-full bg-ink/80 text-lg">
+
+                            ${isFavorite ? "♥" : "♡"}
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="p-5">
+
+                        <h3 class="serif text-2xl text-cream">
+                            ${instrument.name}
+                        </h3>
+
+                        <p class="text-gold text-xs mt-1">
+                            ${instrument.country}
+                        </p>
+
+                        <p class="text-sand text-sm leading-6 mt-4 line-clamp-3">
+                            ${instrument.description}
+                        </p>
+
+                        <button
+                            onclick="openModal(${instrument.id})"
+                            class="text-cream text-xs mt-5 hover:text-gold transition">
+                            View Details →
+                        </button>
+
+                    </div>
+                `;
+
+
+                grid.appendChild(card);
+
+            });
+
+        }
+
+
+        /* =========================================
+           SEARCH
+        ========================================= */
+
+        function searchInstruments() {
+
+            const value =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            const filtered =
+                instruments.filter(instrument => {
+
+                    const searchMatch =
+
+                        instrument.name
+                            .toLowerCase()
+                            .includes(value)
+
+                        ||
+
+                        instrument.country
+                            .toLowerCase()
+                            .includes(value)
+
+                        ||
+
+                        instrument.category
+                            .toLowerCase()
+                            .includes(value)
+
+                        ||
+
+                        instrument.description
+                            .toLowerCase()
+                            .includes(value);
+
+
+                    const categoryMatch =
+                        currentCategory === "All" ||
+                        instrument.category === currentCategory;
+
+
+                    const regionMatch =
+                        currentRegion === "All" ||
+                        instrument.region === currentRegion;
+
+
+                    return searchMatch &&
+                           categoryMatch &&
+                           regionMatch;
+
+                });
+
+
+            displayInstruments(filtered);
+
+        }
+
+
+        /* =========================================
+           CATEGORY
+        ========================================= */
+
+        function setCategory(category) {
+
+            currentCategory = category;
+
+            document
+                .querySelectorAll(".filter-button")
+                .forEach(button => {
+
+                    button.classList.remove(
+                        "bg-gold",
+                        "text-ink",
+                        "border-gold"
+                    );
+
+                });
+
+
+            document
+                .querySelectorAll(".filter-button")
+                .forEach(button => {
+
+                    if (
+                        button.textContent.trim() === category
+                    ) {
+
+                        button.classList.add(
+                            "bg-gold",
+                            "text-ink",
+                            "border-gold"
+                        );
+
+                    }
+
+                });
+
+
+            searchInstruments();
+
+            document
+                .getElementById("explore")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        /* =========================================
+           REGION
+        ========================================= */
+
+        function setRegion(region) {
+
+            currentRegion = region;
+
+            searchInstruments();
+
+        }
+
+
+        /* =========================================
+           MODAL
+        ========================================= */
+
+        function openModal(id) {
+
+            const instrument =
+                instruments.find(item => item.id === id);
+
+
+            if (!instrument) return;
+
+
+            currentInstrument = instrument;
+
+
+            document.getElementById("modalImage").src =
+                instrument.image;
+
+
+            document.getElementById("modalImage").alt =
+                instrument.name;
+
+
+            document.getElementById("modalName").textContent =
+                instrument.name;
+
+
+            document.getElementById("modalCategory").textContent =
+                instrument.category;
+
+
+            document.getElementById("modalDescription").textContent =
+                instrument.description;
+
+
+            document.getElementById("modalCountry").textContent =
+                instrument.country;
+
+
+            document.getElementById("modalRegion").textContent =
+                instrument.region;
+
+
+            document.getElementById("modalMaterial").textContent =
+                instrument.material;
+
+
+            document.getElementById("modalMethod").textContent =
+                instrument.method;
+
+
+            updateFavoriteButton();
+
+
+            const modal =
+                document.getElementById("modal");
+
+
+            modal.classList.remove("hidden");
+
+            modal.classList.add("flex");
+
+        }
+
+
+        /* =========================================
+           CLOSE MODAL
+        ========================================= */
+
+        function closeModal() {
+
+            const modal =
+                document.getElementById("modal");
+
+
+            modal.classList.add("hidden");
+
+            modal.classList.remove("flex");
+
+        }
+
+
+        /* =========================================
+           FAVORITES
+        ========================================= */
+
+        function toggleFavorite(id) {
+
+            if (favorites.includes(id)) {
+
+                favorites =
+                    favorites.filter(item => item !== id);
+
+            } else {
+
+                favorites.push(id);
+
+            }
+
+
+            localStorage.setItem(
+                "musicFavorites",
+                JSON.stringify(favorites)
+            );
+
+
+            searchInstruments();
+
+            displayFavorites();
+
+
+            if (
+                currentInstrument &&
+                currentInstrument.id === id
+            ) {
+
+                updateFavoriteButton();
+
+            }
+
+        }
+
+
+        /* =========================================
+           CURRENT FAVORITE
+        ========================================= */
+
+        function toggleCurrentFavorite() {
+
+            if (!currentInstrument) return;
+
+            toggleFavorite(currentInstrument.id);
+
+        }
+
+
+        /* =========================================
+           FAVORITE BUTTON
+        ========================================= */
+
+        function updateFavoriteButton() {
+
+            const button =
+                document.getElementById("modalFavorite");
+
+
+            if (
+                favorites.includes(
+                    currentInstrument.id
+                )
+            ) {
+
+                button.textContent =
+                    "♥ Remove from Collection";
+
+            } else {
+
+                button.textContent =
+                    "♡ Add to Collection";
+
+            }
+
+        }
+
+
+        /* =========================================
+           DISPLAY FAVORITES
+        ========================================= */
+
+        function displayFavorites() {
+
+            const grid =
+                document.getElementById("favoriteGrid");
+
+            const empty =
+                document.getElementById("emptyFavorites");
+
+
+            grid.innerHTML = "";
+
+
+            const favoriteItems =
+                instruments.filter(item =>
+                    favorites.includes(item.id)
+                );
+
+
+            if (favoriteItems.length === 0) {
+
+                empty.classList.remove("hidden");
+
+                return;
+
+            }
+
+
+            empty.classList.add("hidden");
+
+
+            favoriteItems.forEach(instrument => {
+
+                const card =
+                    document.createElement("div");
+
+
+                card.className =
+                    "bg-sand overflow-hidden";
+
+
+                card.innerHTML = `
+
+                    <img
+                        src="${instrument.image}"
+                        alt="${instrument.name}"
+                        class="w-full h-48 object-cover"
+                    >
+
+                    <div class="p-5">
+
+                        <h3 class="serif text-2xl">
+                            ${instrument.name}
+                        </h3>
+
+                        <p class="text-muted text-sm mt-1">
+                            ${instrument.country}
+                        </p>
+
+                        <button
+                            onclick="removeFavorite(${instrument.id})"
+                            class="text-bronze text-xs mt-4">
+                            Remove
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                grid.appendChild(card);
+
+            });
+
+        }
+
+
+        /* =========================================
+           REMOVE FAVORITE
+        ========================================= */
+
+        function removeFavorite(id) {
+
+            favorites =
+                favorites.filter(item => item !== id);
+
+
+            localStorage.setItem(
+                "musicFavorites",
+                JSON.stringify(favorites)
+            );
+
+
+            displayFavorites();
+
+            searchInstruments();
+
+
+            if (
+                currentInstrument &&
+                currentInstrument.id === id
+            ) {
+
+                updateFavoriteButton();
+
+            }
+
+        }
+
+
+        /* =========================================
+           CLEAR FAVORITES
+        ========================================= */
+
+        function clearFavorites() {
+
+            favorites = [];
+
+            localStorage.removeItem(
+                "musicFavorites"
+            );
+
+            displayFavorites();
+
+            searchInstruments();
+
+            updateFavoriteButtonIfPossible();
+
+        }
+
+
+        function updateFavoriteButtonIfPossible() {
+
+            if (currentInstrument) {
+
+                updateFavoriteButton();
+
+            }
+
+        }
+
+
+        /* =========================================
+           RANDOM INSTRUMENT
+        ========================================= */
+
+        function randomInstrument() {
+
+            const randomIndex =
+                Math.floor(
+                    Math.random() * instruments.length
+                );
+
+
+            const instrument =
+                instruments[randomIndex];
+
+
+            document.getElementById("randomImage").src =
+                instrument.image;
+
+
+            document.getElementById("randomName").textContent =
+                instrument.name;
+
+
+            document.getElementById("randomDescription").textContent =
+                instrument.description;
+
+
+            document.getElementById("randomCountry").textContent =
+                instrument.country;
+
+
+            document.getElementById("randomCategory").textContent =
+                instrument.category;
+
+
+            document
+                .getElementById("randomImage")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+        }
+
+
+        /* =========================================
+           FACTS
+        ========================================= */
+
+        const facts = [
+
+            "The oud is a fretless string instrument with a rounded body.",
+
+            "The koto is a traditional Japanese zither with movable bridges.",
+
+            "The djembe is traditionally played with the hands.",
+
+            "The piano uses hammers to strike strings when its keys are pressed.",
+
+            "The didgeridoo is traditionally associated with Aboriginal Australian cultures.",
+
+            "The violin can be played with a bow or by plucking its strings.",
+
+            "The tabla consists of two hand-played drums.",
+
+            "The shakuhachi is traditionally made from bamboo.",
+
+            "The cajón is a box-shaped percussion instrument.",
+
+            "A synthesizer can generate and manipulate electronic sounds."
+
+        ];
+
+
+        let factIndex = 0;
+
+
+        function nextFact() {
+
+            factIndex++;
+
+
+            if (factIndex >= facts.length) {
+
+                factIndex = 0;
+
+            }
+
+
+            document.getElementById("factText").textContent =
+                facts[factIndex];
+
+        }
+
+
+        /* =========================================
+           MODAL OUTSIDE CLICK
+        ========================================= */
+
+        document
+            .getElementById("modal")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+
+                    closeModal();
+
+                }
+
+            });
+
+
+        /* =========================================
+           ESCAPE KEY
+        ========================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    closeModal();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           INITIAL LOAD
+        ========================================= */
+
+        displayInstruments(instruments);
+
+        displayFavorites();
+
+        randomInstrument();
+
+    </script>
+
+</body>
+
+</html>
